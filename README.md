@@ -1,6 +1,6 @@
 This project aims to analyze the Bitcoin price data from 2013 to 2021 using various time series models. The models used in this project are naive model, model_1_dense_w7_h1, model_2_dense_w30_h1, model_3_dense_w30_h7, model_4_CONV1D, model_5_LSTM, model_6_multivariate, model_8_NBEATs, model_9_ensemble, and model_10_turkey. The output received from these models are mae, mse, rmse, mape, and mase.
 
-Models Used
+**Models Used**
 
 Naive Model
 This model uses the previous day's price as the prediction for the next day.
@@ -32,7 +32,7 @@ This model is an ensemble of the above models.
 Model_10_turkey
 This model uses the turkey method for detecting outliers and is used as a benchmark.
 
-Ouput of the models are 
+**Ouput of the models are** 
 
 ![image](https://user-images.githubusercontent.com/55728354/223864255-6844e1fe-95f0-4c34-b533-eb082493e91d.png)
 
