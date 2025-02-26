@@ -1,40 +1,92 @@
-This project aims to analyze the Bitcoin price data from 2013 to 2021 using various time series models. The models used in this project are naive model, model_1_dense_w7_h1, model_2_dense_w30_h1, model_3_dense_w30_h7, model_4_CONV1D, model_5_LSTM, model_6_multivariate, model_8_NBEATs, model_9_ensemble, and model_10_turkey. The output received from these models are mae, mse, rmse, mape, and mase.
+# Time Series Analysis of Bitcoin Prices
 
-**Models Used**
+This notebook performs time series analysis on historical Bitcoin price data. It covers data loading, preprocessing, visualization, model building, and evaluation.
 
-Naive Model
-This model uses the previous day's price as the prediction for the next day.
+## Table of Contents
 
-Model_1_dense_w7_h1
-This model uses a dense neural network with a window size of 7 and a horizon of 1.
+1.  **Data Loading and Preprocessing**
+    * Downloading the Bitcoin historical data.
+    * Importing and parsing the data using pandas.
+    * Cleaning and preparing the data for analysis.
+    * Visualizing the Bitcoin price over time.
+2.  **Train-Test Split**
+    * Demonstrating the incorrect and correct ways to split time series data.
+    * Creating train and test sets for model evaluation.
+    * Visualizing the train and test splits.
+3.  **Naive Forecasting**
+    * Implementing a naive forecast baseline.
+    * Evaluating the naive forecast using MAE, MSE, RMSE, MAPE, and MASE.
+    * Visualizing the naive forecast against the actual data.
+4.  **Windowing the Data**
+    * Creating windowed datasets for time series prediction.
+    * Implementing functions to create labelled windows and train-test splits.
+5.  **Model Building and Evaluation**
+    * Building and training various machine learning models:
+        * Dense neural networks (model\_1, model\_2, model\_3, model\_6).
+        * 1D Convolutional Neural Network (Conv1D) (model\_4).
+        * Long Short-Term Memory (LSTM) network (model\_5).
+        * N-Beats Model (model_7)
+    * Evaluating model performance using various metrics.
+    * Visualizing model predictions against actual data.
+    * Comparing the performance of different models.
+6.  **Multivariate Time Series Analysis**
+    * Adding block reward data to the Bitcoin price dataset.
+    * Preparing the multivariate dataset for model training.
+    * Training and evaluating a dense neural network on the multivariate data.
+7.  **N-Beats Implementation**
+    * Creating a custom N-Beats block layer.
+    * Building and training an N-Beats model.
+    * Evaluating the N-Beats model performance.
+8.  **Ensemble Models (Conceptual)**
+    * Function to create ensemble models (Not fully executed in this notebook).
 
-Model_2_dense_w30_h1
-This model uses a dense neural network with a window size of 30 and a horizon of 1.
+## Getting Started
 
-Model_3_dense_w30_h7
-This model uses a dense neural network with a window size of 30 and a horizon of 7.
+1.  **Dependencies:**
+    * pandas
+    * matplotlib
+    * numpy
+    * scikit-learn (sklearn)
+    * tensorflow
+    * wget (for downloading the dataset)
 
-Model_4_CONV1D
-This model uses a 1D convolutional neural network.
+2.  **Installation:**
+    ```bash
+    pip install pandas matplotlib numpy scikit-learn tensorflow
+    ```
 
-Model_5_LSTM
-This model uses a Long Short-Term Memory (LSTM) neural network.
+3.  **Running the Notebook:**
+    * Open the `Time_Series_Analysis.ipynb` notebook in Google Colab or Jupyter Notebook.
+    * Run the cells sequentially to execute the analysis.
 
-Model_6_multivariate
-This model uses a multivariate neural network with multiple features.
+4.  **Data Source:**
+    * The Bitcoin historical price data is downloaded from the following GitHub repository:
+        `https://raw.githubusercontent.com/mrdbourke/tensorflow-deep-learning/main/extras/BTC_USD_2013-10-01_2021-05-18-CoinDesk.csv`
 
-Model_8_NBEATs
-This model uses the Neural basis expansion analysis for interpretable time series forecasting (N-BEATS) architecture.
+## Usage
 
-Model_9_ensemble
-This model is an ensemble of the above models.
+* The notebook can be used as a template for time series analysis on other datasets.
+* The model architectures and hyperparameters can be adjusted to improve performance.
+* The evaluation metrics can be extended to include other relevant metrics.
+* The ensemble model section can be expanded upon.
 
-Model_10_turkey
-This model uses the turkey method for detecting outliers and is used as a benchmark.
+## Key Concepts
 
-**Ouput of the models are** 
+* Time series data.
+* Train-test split for time series.
+* Naive forecasting.
+* Windowing time series data.
+* Neural network models for time series prediction.
+* Multivariate time series.
+* N-Beats Model.
+* Model evaluation metrics (MAE, MSE, RMSE, MAPE, MASE).
 
-![image](https://user-images.githubusercontent.com/55728354/223864255-6844e1fe-95f0-4c34-b533-eb082493e91d.png)
+## Notes
 
+* The notebook uses Google Colab for execution, but it can also be run locally with Jupyter Notebook.
+* The model training times may vary depending on the hardware and the number of epochs.
+* The N-Beats model takes a substantial amount of time to run.
 
-The turkey models giving the best MAE of any of the models 
+## Author
+
+Anirudh Jeevan
